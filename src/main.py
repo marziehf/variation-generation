@@ -5,7 +5,7 @@ mod.load_data()
 
 adv_mod = mod.adv_removal()
 num_mod = mod.number_perturbations(offset=10)
-prn_mod =  mod.pronoun_swap()
+prn_mod = mod.pronoun_swap()
 
 print((adv_mod))
 print((num_mod))
