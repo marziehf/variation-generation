@@ -1,4 +1,3 @@
-import os
 import re
 
 
@@ -17,7 +16,6 @@ class Modific:
 
     @staticmethod
     def load_dictcc():
-        current_folder = os.path.dirname(__file__)
         with open('../data/de-en.adv.tsv') as f:
             dict_advs = [line.strip().split('\t') for line in f]
         return dict_advs
@@ -83,7 +81,7 @@ class Modific:
 
         for de_adv, en_adv, _ in dict_advs:
             for en_snt, de_snt in zip(self.en_snts, self.de_snts):
-                if en_adv in en_snt.lower().split()  and de_adv in de_snt.lower().split() :
+                if en_adv in en_snt.lower().split()  and de_adv in de_snt.lower().split():
                     en_span = self._get_span(en_snt, en_adv)
                     de_span = self._get_span(de_snt, de_adv)
                     en_snts.append(en_snt[:en_span[0]] + en_snt[en_span[1] + 1:])
