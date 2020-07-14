@@ -1,3 +1,5 @@
+import argparse
+
 from src.modific import Modific
 
 
@@ -11,17 +13,23 @@ def write_to_file(path, nam, dic):
 
 
 if __name__ == '__main__':
-    bitext_prefix = '../data/newstest2012'
-    mod = Modific(bitext_prefix)
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-b", "--bitext", default='../data/newstest2012', help="Path to bitext prefix")
+    ap.add_argument("-n", "--numvar", default=10, type=int, help="Number variation parameter")
+    ap.add_argument("-o", "--output", default='../data/newstest2012', help="Path to output prefix")
+    args = vars(ap.parse_args())
+
+    mod = Modific(args['bitext'])
 
     # substitute numbers
-    num_mod = mod.number_perturbations(offset=10)
-    write_to_file(bitext_prefix, 'num', num_mod)
+    num_mod = mod.number_perturbations(offset=args['numvar'])
+    write_to_file(args['output'], 'num', num_mod)
 
     # remove adverbs
     adv_mod = mod.adv_removal()
-    write_to_file(bitext_prefix, 'adv', adv_mod)
+    write_to_file(args['output'], 'adv', adv_mod)
 
     # swap pronouns
     prn_mod = mod.pronoun_swap()
-    write_to_file(bitext_prefix, 'prn', prn_mod)
+    write_to_file(args['output'], 'prn', prn_mod)

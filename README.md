@@ -3,6 +3,12 @@
 This repository includes the codes and scripts for sentence pair variations 
 proposed in [our paper](https://www.aclweb.org/anthology/2020.ngt-1.10.pdf).
 
+## Usage
+
+```python
+
+```
+
 ## Citation
 
 If you use this code, please cite:
