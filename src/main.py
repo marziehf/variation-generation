@@ -25,4 +25,3 @@ if __name__ == '__main__':
     # swap pronouns
     prn_mod = mod.pronoun_swap()
     write_to_file(bitext_prefix, 'prn', prn_mod)
-
