@@ -2,8 +2,11 @@ import re
 
 
 class Modific:
-    en_snts = []
+    src_snts = []
     de_snts = []
+
+    def __init__(self, bitext_prefix):
+        self.load_data(bitext_prefix)
 
     def load_data(self, path):
         with open(path + '.en') as f:

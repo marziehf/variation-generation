@@ -12,18 +12,17 @@ def write_to_file(path, nam, dic):
 
 if __name__ == '__main__':
     bitext_prefix = '../data/newstest2012'
-    mod = Modific()
-    mod.load_data(bitext_prefix)
+    mod = Modific(bitext_prefix)
 
     # substitute numbers
     num_mod = mod.number_perturbations(offset=10)
     write_to_file(bitext_prefix, 'num', num_mod)
 
     # remove adverbs
-    #adv_mod = mod.adv_removal()
-    #write_to_file(bitext_prefix, 'adv', num_mod)
+    adv_mod = mod.adv_removal()
+    write_to_file(bitext_prefix, 'adv', adv_mod)
 
     # swap pronouns
-    #prn_mod = mod.pronoun_swap()
-    #write_to_file(bitext_prefix, 'prn', num_mod)
+    prn_mod = mod.pronoun_swap()
+    write_to_file(bitext_prefix, 'prn', prn_mod)
 
