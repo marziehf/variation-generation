@@ -6,7 +6,7 @@ proposed in [our paper](https://www.aclweb.org/anthology/2020.ngt-1.10.pdf).
 ## Usage
 
 ```python
-
+python main.py --bitext ./data/newstest2012 --numvar 10 --output ./data/newstest2012.aug
 ```
 
 ## Citation

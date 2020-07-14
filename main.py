@@ -15,9 +15,9 @@ def write_to_file(path, nam, dic):
 if __name__ == '__main__':
 
     ap = argparse.ArgumentParser()
-    ap.add_argument("-b", "--bitext", default='../data/newstest2012', help="Path to bitext prefix")
+    ap.add_argument("-b", "--bitext", default='./data/newstest2012', help="Path to bitext prefix")
     ap.add_argument("-n", "--numvar", default=10, type=int, help="Number variation parameter")
-    ap.add_argument("-o", "--output", default='../data/newstest2012', help="Path to output prefix")
+    ap.add_argument("-o", "--output", default='./data/newstest2012', help="Path to output prefix")
     args = vars(ap.parse_args())
 
     mod = Modific(args['bitext'])

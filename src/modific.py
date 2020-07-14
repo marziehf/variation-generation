@@ -19,7 +19,7 @@ class Modific:
 
     @staticmethod
     def load_dictcc():
-        with open('../data/de-en.adv.tsv') as f:
+        with open('./data/de-en.adv.tsv') as f:
             dict_advs = [line.strip().split('\t') for line in f]
         return dict_advs
 
