@@ -2,11 +2,17 @@
 
 This repository includes the codes and scripts for sentence pair variations 
 proposed in [our paper](https://www.aclweb.org/anthology/2020.ngt-1.10.pdf).
+Given a (German-English) bitext, this code generates sentence pair variations with substituting numbers,
+removing adverbs, and swaping pronouns. 
+
+**Note**: Substituting numbers is language independent and can be used for language pairs other than German-English. 
 
 ## Usage
 
-```python
-python main.py --bitext ./data/newstest2012 --numvar 10 --output ./data/newstest2012.aug
+```commandline
+python main.py --bitext ./data/newstest2012  
+               --numvar 10 
+               --output ./variations_o/newstest2012.aug
 ```
 
 ## Citation
