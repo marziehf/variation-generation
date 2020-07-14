@@ -5,10 +5,10 @@ class Modific:
     en_snts = []
     de_snts = []
 
-    def load_data(self):
-        with open('../data/newstest2012.en') as f:
+    def load_data(self, path):
+        with open(path + '.en') as f:
             self.en_snts = f.readlines()
-        with open('../data/newstest2012.de') as f:
+        with open(path + '.de') as f:
             self.de_snts = f.readlines()
 
         self.en_snts = [x.strip() for x in self.en_snts]
@@ -34,8 +34,8 @@ class Modific:
                     if num + k > 0 and k != 0:
                         pert_en_snt = re.sub(str(num), str(num + k), en_snt)
                         pert_de_snt = re.sub(str(num), str(num + k), de_snt)
-                        en_snts.append(pert_de_snt)
-                        de_snts.append(pert_en_snt)
+                        de_snts.append(pert_de_snt)
+                        en_snts.append(pert_en_snt)
         return {"en": en_snts, "de": de_snts}
 
     @staticmethod
