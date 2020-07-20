@@ -10,7 +10,7 @@ removing adverbs, and swaping pronouns.
 ## Usage
 
 ```commandline
-python main.py --bitext ./data/newstest2012  
+python src/main.py --bitext ./data/newstest2012  
                --numvar 10 
                --output ./variations_o/newstest2012.aug
 ```
